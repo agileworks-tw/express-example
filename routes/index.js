@@ -6,7 +6,6 @@ router.get('/', async function(req, res) {
   let users = await models.User.findAll({
     include: [models.Task]
   });
-
   res.render('index', {
     title: 'Sequelize: Express Example',
     users: users
@@ -15,6 +14,7 @@ router.get('/', async function(req, res) {
 });
 router.get('/api/users/:user_name/tasks', async function (req, res) {
   let username = req.params.user_name;
+  
   let user = await models.User.findOne({
     where: {username}
   });
@@ -34,7 +34,6 @@ router.post('/api/users/:user_name/tasks/create', async function (req, res) {
   let user = await models.User.findOne({
     where: {username}
   });
-
   let title = req.body.title;
   let task = await models.Task.create({
     title,
@@ -43,5 +42,21 @@ router.post('/api/users/:user_name/tasks/create', async function (req, res) {
 
   res.json({task});
 });
+router.put('/api/task/:id', async function (req, res) {
+  let id = req.params.id;
+  let completed = req.body.completed;
 
+  let task = await models.Task.findOne({
+    where: {
+      id
+    }
+  });
+
+  task.completed = completed;
+  task = await task.save();
+
+  res.json({
+    task
+  });
+});
 module.exports = router;
