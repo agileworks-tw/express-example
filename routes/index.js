@@ -58,4 +58,21 @@ router.put('/api/task/:id', async function (req, res) {
   res.json({task});
 });
 
+router.delete('/api/task/:id', async function (req, res) {
+  let id = req.params.id;
+  
+
+  let task = await models.Task.findOne({
+    where: {
+      id
+    }
+  });
+
+  task = await task.destroy();
+
+  res.json({
+    task
+  });
+});
+
 module.exports = router;
