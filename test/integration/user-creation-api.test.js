@@ -84,7 +84,7 @@ describe('user creation page', function () {
       .and.to.have.property("completed");
     expect(result.task.completed).to.equal(true);
   });
-  it.only('透過 api 提供刪除 task 功能', async function () {
+  it('透過 api 提供刪除 task 功能', async function () {
     let username = 'frank test delete';
     let user = await this.models.User.create({
       username
