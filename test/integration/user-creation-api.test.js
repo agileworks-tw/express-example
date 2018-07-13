@@ -4,7 +4,7 @@ var app      = require('../../app');
 var expect   = require('expect.js');
 var request  = require('supertest');
 
-describe.only('user creation page', function () {
+describe('user creation page', function () {
   before(async function () {
       await require('../../models').sequelize.sync();
   });
