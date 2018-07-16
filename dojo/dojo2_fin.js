@@ -7,6 +7,6 @@ var fluentLogHelper = new FluentLogHelper(logConfig);
 
 console.log("config.username ==>", config.username);
 fluentLogHelper.log({
-    task: "Dojo 2: CI: Jenkins Blue Ocean 建置",
+    task: "完成 Dojo 2: Jenkins Blue Ocean 建置",
     username: config.username
 });
