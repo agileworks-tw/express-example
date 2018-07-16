@@ -8,7 +8,8 @@ pipeline {
   stages {
     stage('wellcome') {
       steps {
-        sh 'echo "hello"'
+        def config = readJSON file: "${env.WORKSPACE}/config/config.json"
+        sh 'echo "hello ${config.username}"'
       }
     }
   }
