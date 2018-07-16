@@ -1,4 +1,5 @@
-module.exports = {
+let config = {
+  username: "spooky",
   development: {
     dialect: "sqlite",
     storage: "./db.development.sqlite"
@@ -16,3 +17,6 @@ module.exports = {
     use_env_variable: 'DATABASE_URL'
   }
 };
+process.env.USERNAME = config.username
+console.log(process.env.USERNAME);
+module.exports = config;
