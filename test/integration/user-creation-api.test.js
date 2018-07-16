@@ -4,6 +4,8 @@ var app      = require('../../app');
 var expect   = require('expect.js');
 var request  = require('supertest');
 
+
+
 describe('user creation page', function () {
   before(async function () {
       await require('../../models').sequelize.sync();
@@ -56,6 +58,7 @@ describe('user creation page', function () {
       .to.be.an('object')
       .and.to.have.property("title");
   });
+
   it('透過 api 更新 task 之 completed 狀態', async function () {
     let username = 'frank';
     let user = await this.models.User.create({
@@ -82,6 +85,10 @@ describe('user creation page', function () {
       .and.to.have.property("title")
       .and.to.have.property("completed");
     expect(result.task.completed).to.equal(true);
+    
+    require("../../dojo/dojo1_fin");
+    
   });
+
 
 });

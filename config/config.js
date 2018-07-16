@@ -1,5 +1,13 @@
-let config = {
+
+
+module.exports = {
   username: "spooky",
+  log: {
+    host: "211.72.239.243",
+    port: "24224",
+    tag_prefix: "cargocms.pos"
+
+  },
   development: {
     dialect: "sqlite",
     storage: "./db.development.sqlite"
@@ -17,6 +25,3 @@ let config = {
     use_env_variable: 'DATABASE_URL'
   }
 };
-process.env.USERNAME = config.username
-console.log(process.env.USERNAME);
-module.exports = config;

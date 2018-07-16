@@ -10,11 +10,15 @@ pipeline {
     stage('wellcome') {
       
       steps {
-        sh 'node config/config.js && echo "hello $USERNAME"'
-        sh 'echo "hello $USERNAME"'
+        sh 'echo "wellcome to dojo 2 !"'
       }
     }
   }
+  post {
+    success {
+        sh 'node dojo/dojo2_fin.js'
+    }
+  }  
   environment {
     npm_config_cache = 'npm-cache'
     HOME = '.'
