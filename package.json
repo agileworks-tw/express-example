@@ -15,6 +15,7 @@
     "cors": "^2.8.4",
     "debug": "^3.1.0",
     "express": "^4.16.2",
+    "fluent-log-helper": "github:trunk-studio/fluent-log-helper",
     "morgan": "^1.7.0",
     "pg": "^6.1.0",
     "pug": "^2.0.0-rc.4",
