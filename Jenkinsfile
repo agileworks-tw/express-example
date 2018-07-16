@@ -6,16 +6,18 @@ pipeline {
 
   }
   stages {
-    def config = readJSON file: "${env.WORKSPACE}/config/config.json"
+      
     stage('wellcome') {
       
       steps {
-        sh 'echo "hello ${config.username}"'
+        sh 'node config/config.js'
+        sh 'echo "hello ${USERNAME}"'
       }
     }
   }
   environment {
     npm_config_cache = 'npm-cache'
     HOME = '.'
+
   }
 }
