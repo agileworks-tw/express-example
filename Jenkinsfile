@@ -10,7 +10,7 @@ pipeline {
     stage('wellcome') {
       
       steps {
-        sh 'node config/config.js'
+        sh 'node config/config.js && echo "hello $USERNAME"'
         sh 'echo "hello $USERNAME"'
       }
     }
