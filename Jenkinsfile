@@ -8,11 +8,16 @@ pipeline {
   stages {
       
     stage('wellcome') {
-      
       steps {
         sh 'echo "wellcome to dojo 2 !"'
       }
     }
+    stage('install') {
+      steps {
+        sh 'npm i'
+      }
+    }
+
   }
   post {
     success {
