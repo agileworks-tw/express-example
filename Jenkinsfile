@@ -11,7 +11,7 @@ pipeline {
       
       steps {
         sh 'node config/config.js'
-        sh 'echo "hello ${USERNAME}"'
+        sh 'echo "hello $USERNAME"'
       }
     }
   }
