@@ -74,4 +74,12 @@ router.delete('/api/task/:id', async function (req, res) {
     task
   });
 });
+router.get('/api/done-dojo3', async function (req, res) {
+  
+  require("../dojo/dojo3_fin");
+  res.json({
+    success:true
+  });
+});
+
 module.exports = router;
