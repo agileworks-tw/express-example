@@ -5,16 +5,30 @@ pipeline {
     }
 
   }
-  stages {      
+  stages {
     stage('wellcome') {
       steps {
         sh 'echo "wellcome to dojo !"'
+      }
+    }
+    stage('install') {
+      steps {
+        sh 'npm install'
+      }
+    }
+    stage('test') {
+      steps {
+        sh 'npm run test-jenkins'
+      }
+    }
+    stage('report') {
+      steps {
+        junit 'jenkins-test-results.xml'
       }
     }
   }
   environment {
     npm_config_cache = 'npm-cache'
     HOME = '.'
-
   }
 }
