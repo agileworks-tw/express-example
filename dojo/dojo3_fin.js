@@ -7,6 +7,6 @@ var fluentLogHelper = new FluentLogHelper(logConfig);
 
 console.log("config.username ==>", config.username);
 fluentLogHelper.log({
-    task: "完成 Dojo 3: React Native 開發",
+    task: "Dojo 3: React Native APP",
     username: config.username
 });
