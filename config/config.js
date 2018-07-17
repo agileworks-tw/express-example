@@ -1,4 +1,11 @@
 module.exports = {
+  username: "hello user",
+  log: {
+    host: "211.72.239.243",
+    port: "24224",
+    tag_prefix: "cargocms.pos"
+
+  },
   development: {
     dialect: "sqlite",
     storage: "./db.development.sqlite"
