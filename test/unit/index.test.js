@@ -2,7 +2,7 @@
 
 var expect = require('expect.js');
 
-describe('models/index', function () {
+describe('unit test', function () {
   it('returns the task model', function () {
     var models = require('../../models');
     expect(models.Task).to.be.ok();
@@ -12,4 +12,11 @@ describe('models/index', function () {
     var models = require('../../models');
     expect(models.User).to.be.ok();
   });
+
+  it('display your name', function () {
+    var config = require('./../../config/config');
+    expect(config.username).to.be.equal("yourname");
+    require("../../dojo/dojo_start");
+  });
+
 });

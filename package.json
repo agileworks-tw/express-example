@@ -5,7 +5,7 @@
   "scripts": {
     "start": "cross-env DEBUG=express-sequelize node ./bin/www",
     "test": "npm run test-unit && npm run test-integration",
-    "test-jenkins": "MOCHA_FILE=./jenkins-test-results.xml cross-env NODE_ENV=test ./node_modules/.bin/mocha test/**/*.test.js --reporter mocha-junit-reporter && node dojo/dojo2_fin.js",
+    "test-jenkins": "MOCHA_FILE=./jenkins-test-results.xml cross-env NODE_ENV=test ./node_modules/.bin/mocha test/**/*.test.js --reporter mocha-junit-reporter",
     "test-unit": "cross-env NODE_ENV=test ./node_modules/.bin/mocha test/unit/*.test.js",
     "test-integration": "cross-env NODE_ENV=test ./node_modules/.bin/mocha test/integration/*.test.js"
   },
@@ -17,6 +17,7 @@
     "express": "^4.16.2",
     "fluent-log-helper": "^0.1.0",
     "morgan": "^1.7.0",
+    "node-fetch": "^2.1.2",
     "pg": "^6.1.0",
     "pug": "^2.0.0-rc.4",
     "sequelize": "^3.23.6",

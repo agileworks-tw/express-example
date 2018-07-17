@@ -1,5 +1,5 @@
 module.exports = {
-  username: "hello user",
+  username: "user no name",
   log: {
     host: "211.72.239.243",
     port: "24224",
