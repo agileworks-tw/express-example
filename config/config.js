@@ -1,8 +1,8 @@
 module.exports = {
   username: "user no name",
   log: {
-    host: "211.72.239.243",
-    port: "24224",
+    host: "172.20.10.2",
+    port: "5000",
     tag_prefix: "cargocms.pos"
 
   },

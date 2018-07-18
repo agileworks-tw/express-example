@@ -2,7 +2,7 @@ var fetch = require('node-fetch');
 
 var config = require('./../config/config');
 
-let url = `http://${config.log.host}:${config.log.port}/eink?text=${config.username}`;
+let url = `http://${config.log.host}:${config.log.port}/eink?username=${config.username}`;
 
 fetch(url);
 
