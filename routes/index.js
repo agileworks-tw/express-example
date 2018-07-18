@@ -57,5 +57,19 @@ router.put('/api/task/:id', async function (req, res) {
 
   res.json({task});
 });
+router.delete('/api/task/:id', async function (req, res) {
+  // 接收從 url 傳入的參數
+  let id = req.params.id;
 
+  // 查出 id 對應的 task 
+  let task = await models.Task.findOne({
+    where: { id }
+  });
+
+  // 進行刪除
+  task = await task.destroy();
+
+  // 回傳刪除成功的資料內容
+  res.json({ task });
+});
 module.exports = router;
