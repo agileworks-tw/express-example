@@ -1,5 +1,5 @@
 module.exports = {
-  username: "smlsun xie",
+  username: "user no name",
   log: {
     host: "172.20.10.2",
     port: "5000",

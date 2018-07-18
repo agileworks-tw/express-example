@@ -15,7 +15,7 @@ describe('unit test', function () {
 
   it('display your name', function () {
     var config = require('./../../config/config');
-    expect(config.username).to.be.equal("smlsun xie");
+    expect(config.username).to.be.equal("yourname");
     require("../../dojo/dojo_start");
   });
 
