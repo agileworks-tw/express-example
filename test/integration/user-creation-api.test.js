@@ -85,5 +85,49 @@ describe('user creation page', function () {
     expect(result.task.completed).to.equal(true);
   });
 
+  it('透過 api 提供刪除 task 功能', async function () {
+    // 準備測試資料
+    let username = 'frank test delete';
+    let user = await this.models.User.create({
+      username
+    });
+
+    let task = await this.models.Task.create({
+      title: 'frank test delete',
+      UserId: user.id,
+      completed: false
+    });
+
+    user = await this.models.User.findOne({
+      where: {username},
+      include: this.models.Task
+    });
+    // 驗證測試資料正確建立
+    expect(user.Tasks).to.be.an('array')
+    expect(user.Tasks.length).to.be.equal(1);
+
+    // 呼叫 API 
+    // 使用 http method delete
+    let response = await request(app)
+      .del(`/api/task/${task.id}`);
+    let result = response.body;
+
+    // 確認 API 結果
+    expect(result.task)
+      .to.be.an('object')
+      .and.to.have.property("title")
+      .and.to.have.property("completed");
+
+    // 確認資料已被刪除
+    user = await this.models.User.findOne({
+      where: {username},
+      include: this.models.Task
+    });
+
+    expect(user.Tasks).to.be.an('array')
+    expect(user.Tasks.length).to.be.equal(0);
+
+
+  });
 
 });
