@@ -4,6 +4,6 @@ var config = require('./../config/config');
 
 let url = `http://${config.log.host}:${config.log.port}/eink?username=${config.username}`;
 console.log(url);
-fetch(url, {timeout: 10000});
+fetch(url, {timeout: 5000});
 
 console.log(`wellcome ${config.username}`);
