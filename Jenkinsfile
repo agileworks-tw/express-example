@@ -21,6 +21,11 @@ pipeline {
         sh 'npm run test-jenkins'
       }
     }
+    stage('report') {
+      steps {
+        junit 'jenkins-test-results.xml'
+      }
+    }
   }
   environment {
     npm_config_cache = 'npm-cache'
